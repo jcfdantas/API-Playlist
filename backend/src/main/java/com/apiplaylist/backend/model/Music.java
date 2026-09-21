@@ -11,7 +11,7 @@ import jakarta.persistence.Table;
 //Indica para o JPA que isso é uma tabela
 @Table(name ="musica") 
 //define o nome da tabela
-public class Musica {
+public class Music {
     @Id 
     //id serve para definir como chave primaria
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -34,12 +34,12 @@ public class Musica {
     @Column (nullable =  false)
     private Boolean favorite;
 
-
-    public Musica() {
+    //PERGUNTAR PARA O MATEUS   
+    public Music() {
     }
     //getters e setters
 
-    public Musica(Long id, String title, String singer, String album, Integer duration, Boolean favorite) {
+    public Music(Long id, String title, String singer, String album, Integer duration, Boolean favorite) {
         this.id = id;
         this.title = title;
         this.singer = singer;
