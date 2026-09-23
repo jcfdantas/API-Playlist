@@ -25,22 +25,21 @@ public class Music {
     @Column (nullable = false, length = 100)
     private String singer;
 
-    @Column (nullable = true, length = 100)
+    @Column (length = 100)
     private String album;
 
-    @Column (nullable = true, length = 20)
+    @Column (length = 20)
     private Integer duration;
 
     @Column (nullable =  false)
     private Boolean favorite;
 
     //PERGUNTAR PARA O MATEUS   
-    public Music() {
-    }
+    public Music() {}
+    
     //getters e setters
 
-    public Music(Long id, String title, String singer, String album, Integer duration, Boolean favorite) {
-        this.id = id;
+    public Music(String title, String singer, String album, Integer duration, Boolean favorite) {
         this.title = title;
         this.singer = singer;
         this.album = album;
