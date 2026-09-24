@@ -9,7 +9,7 @@ import jakarta.persistence.Table;
 
 @Entity 
 //Indica para o JPA que isso é uma tabela
-@Table(name ="musica") 
+@Table(name ="musics") 
 //define o nome da tabela
 public class Music {
     @Id 
@@ -18,18 +18,18 @@ public class Music {
     //@Generated com IDENTITY indica geração de valor do tipo identidade
     private Long id;
 
-    @Column (nullable = false, length = 100)
+    @Column (nullable = false, length = 150)
     //Indica ao banco que é uma coluna
     private String title;
 
     @Column (nullable = false, length = 100)
-    private String singer;
+    private String artist;
 
     @Column (length = 100)
     private String album;
 
     @Column (length = 20)
-    private Integer duration;
+    private double duration;
 
     @Column (nullable =  false)
     private Boolean favorite;
@@ -39,9 +39,9 @@ public class Music {
     
     //getters e setters
 
-    public Music(String title, String singer, String album, Integer duration, Boolean favorite) {
+    public Music(String title, String artist, String album, double duration, Boolean favorite) {
         this.title = title;
-        this.singer = singer;
+        this.artist = artist;
         this.album = album;
         this.duration = duration;
         this.favorite = favorite;
@@ -49,20 +49,24 @@ public class Music {
 
 
 
+    public Music(String title2, String artist2, String album2, double duration2, int quantity, Boolean favorite2) {
+        //TODO Auto-generated constructor stub
+    }
+
     public Long getId() {
         return id;
     }
     public String getAlbum() {
         return album;
     }
-    public Integer getDuration() {
+    public double getDuration() {
         return duration;
     }
     public Boolean getFavorite() {
         return favorite;
     }
-    public String getSinger() {
-        return singer;
+    public String getArtist() {
+        return artist;
     }
     public String getTitle() {
         return title;
@@ -80,8 +84,8 @@ public class Music {
     public void setFavorite(Boolean favorite) {
         this.favorite = favorite;
     }
-    public void setSinger(String singer) {
-        this.singer = singer;
+    public void setSinger(String artist) {
+        this.artist = artist;
     }
     public void setTitle(String title) {
         this.title = title;
@@ -89,8 +93,13 @@ public class Music {
 
     @Override 
     public String toString() {
-        return "Musica [id=" + id + ", title=" + title + ", singer=" + singer + ", album=" + album + ", duration="
+        return "Musica [id=" + id + ", title=" + title + ", artist=" + artist + ", album=" + album + ", duration="
                 + duration + ", favorite=" + favorite + "]";
+    }
+
+    public int getQuantity() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'getQuantity'");
     }
 }
 
